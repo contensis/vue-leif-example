@@ -16,8 +16,11 @@
 </template>
 
 <script>
-  const { Query, Op } = require("contensis-delivery-api");
+  // Connect to the client
   import ContensisClient from '../plugins/contensis'
+  // Import search classes
+  const { Query, Op } = require("contensis-delivery-api");
+
   export default {
     name: 'BlogListing',
     data() {
@@ -26,14 +29,14 @@
         }
       },
       async created() {
-        //--------------------------------------
-        // Get a list of blogs
-        //--------------------------------------
+        // Query for blog posts.
         const blogsQuery = new Query(
           Op.equalTo("sys.contentTypeId", "blogPost"),
           Op.equalTo("sys.versionStatus", "latest")
         );
+        // Search using the query.
         const blogsPayload = await ContensisClient.entries.search(blogsQuery);
+        // Pass search results to the blogListData prop.
         this.blogListData = blogsPayload.items
       }
   }

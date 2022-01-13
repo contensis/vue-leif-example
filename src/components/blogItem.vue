@@ -25,6 +25,7 @@
 </template>
 
 <script>
+// Connect to the client
 import ContensisClient from '../plugins/contensis'
 
 export default {
@@ -36,8 +37,12 @@ export default {
       }
     },
     async created() {
-        const entry = await ContensisClient.entries.get({ id: this.$route.params.id, linkDepth: 1 });
-        this.blog = entry
+        // Get the entry ID from the route.
+        const entryId = this.$route.params.id;
+        // Get the entry by ID. Link depth of 1 to pull in linked content.
+        const entry = await ContensisClient.entries.get({ id: entryId, linkDepth: 1 });
+        // Pass the entry data into blog prop.
+        this.blog = entry;
     }
 }
 
