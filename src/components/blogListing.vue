@@ -3,7 +3,7 @@
   <ul class="blogs">
       <li class="blog-card" v-for="item in blogListData" v-bind:key="item.sys.id">
         <h2 class="blog-card__title mobile"><router-link class="blog-card__link" :to="{ name: 'blog', params: {id: item.sys.id, slug: item.sys.slug} }">{{ item.entryTitle }}</router-link></h2>
-        <img v-if="item.thumbnailImage" class="blog-card__img" :src="'http://live.leif.zenhub.contensis.cloud' + item.thumbnailImage.asset.sys.uri" alt="" />
+        <img v-if="item.thumbnailImage" class="blog-card__img" :src="'http://live.leif.contensis.cloud' + item.thumbnailImage.asset.sys.uri" alt="" />
         <div class="related-blog__content">
           <h2 class="blog-card__title desktop"><router-link class="blog-card__link" :to="{ name: 'blog', params: {id: item.sys.id, slug: item.sys.slug} }">{{ item.entryTitle }}</router-link></h2>
           <p class="blog-card__text">{{ item.leadParagraph }}</p>

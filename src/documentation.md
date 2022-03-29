@@ -157,7 +157,7 @@ Full example:
       <li class="blog-card" v-for="item in blogListData" v-bind:key="item.sys.id">
         <router-link :to="{ name: 'blog', params: {id: item.sys.id, slug: item.sys.slug} }">
             <h2 class="blog-card__title mobile">{{ item.entryTitle }}</h2>
-            <img class="blog-card__img" :src="'http://live.leif.zenhub.contensis.cloud' + item.thumbnailImage.asset.sys.uri" :alt="item.thumbnailImage.altText" />
+            <img class="blog-card__img" :src="'http://live.leif.contensis.cloud' + item.thumbnailImage.asset.sys.uri" :alt="item.thumbnailImage.altText" />
             <div class="related-blog__content">
             <h2 class="blog-card__title desktop">{{ item.entryTitle }}</h2>
             <p class="blog-card__text">{{ item.leadParagraph }}</p>
