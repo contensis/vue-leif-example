@@ -1,8 +1,9 @@
-const { Client } = require("contensis-delivery-api");
+import { Client } from 'contensis-delivery-api';
+
 const ContensisClient = Client.create({
-  rootUrl: "https://cms-leif.cloud.contensis.com",
-  accessToken: "87YVJEVmuYj4B9QNswjZAuPlel4r51AfyGq5FMzcC6NHVeSn",
-  projectId: "website",
+  rootUrl: `https://cms-${process.env.VUE_APP_ALIAS}.cloud.contensis.com`,
+  accessToken: process.env.VUE_APP_ACCESS_TOKEN,
+  projectId: process.env.VUE_APP_PROJECT_API_ID,
 });
 
-export default ContensisClient
+export default ContensisClient;
