@@ -5,18 +5,14 @@
       <img
         v-if="blog.thumbnailImage"
         class="blog-hero__img"
-        :src="
-          'http://live.leif.contensis.cloud' + blog.thumbnailImage.asset.sys.uri
-        "
+        :src="imageHost + blog.thumbnailImage.asset.sys.uri"
         :alt="blog.thumbnailImage.altText"
       />
     </div>
     <div class="profile">
       <img
         class="profile__img"
-        :src="
-          'http://live.leif.contensis.cloud' + blog.author.photo.asset.sys.uri
-        "
+        :src="imageHost + blog.author.photo.asset.sys.uri"
         :alt="blog.author.photo.altText"
       />
       <span class="profile__name">{{ blog.author.entryTitle }}</span>
@@ -29,9 +25,7 @@
         <div v-if="field.type === 'image'" class="inline-img">
           <img
             class="inline-img__img"
-            :src="
-              'http://live.leif.contensis.cloud' + field.value.asset.sys.uri
-            "
+            :src="imageHost + field.value.asset.sys.uri"
             :alt="field.value.altText"
           />
           <div class="inline-img__content">
@@ -52,6 +46,7 @@ export default {
   title: 'Page title',
   data() {
     return {
+      imageHost: `https://live-${process.env.VUE_APP_ALIAS}.cloud.contensis.com`,
       blog: null,
     };
   },

@@ -15,9 +15,7 @@
       <img
         v-if="blog.thumbnailImage"
         class="blog-card__img"
-        :src="
-          'http://live.leif.contensis.cloud' + blog.thumbnailImage.asset.sys.uri
-        "
+        :src="imageHost + blog.thumbnailImage.asset.sys.uri"
         alt=""
       />
       <div class="related-blog__content">
@@ -48,6 +46,7 @@ export default {
   name: 'BlogListing',
   data() {
     return {
+      imageHost: `https://live-${process.env.VUE_APP_ALIAS}.cloud.contensis.com`,
       blogs: null,
     };
   },
