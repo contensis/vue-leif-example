@@ -24,7 +24,7 @@ export default {
 body {
   color: #333333;
   background-color: #ffffff;
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 h1,
@@ -33,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif 4', serif;
 }
 h1 {
   font-size: 2.5rem;
@@ -139,7 +139,7 @@ footer {
   border-radius: 4px;
   color: #2b2f51;
   display: block;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif 4', serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
@@ -323,7 +323,7 @@ footer {
 }
 .profile__name {
   display: block;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif 4', serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -334,7 +334,7 @@ footer {
   padding: 0 16px;
 }
 .lead {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif 4', serif;
   font-size: 22px;
   font-weight: 600;
   line-height: 32px;
